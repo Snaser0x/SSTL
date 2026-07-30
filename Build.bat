@@ -18,7 +18,7 @@ pushd "%BUILD_DIR%"
 
 if /i "%BUILD%"=="debug" (
     echo [SSTL] Compiling and linking [debug]...
-    cl /nologo /std:c++17 /MTd /W4 /WX /permissive- /Od /Zi /EHsc /I "%~dp0Include" "%~dp0Src\Main.cpp" /Fd:"SSTL.pdb" /Fe:"SSTL.exe" /link /nologo /debug
+    cl /nologo /std:c++17 /MTd /W4 /WX /permissive- /Od /Zi /EHsc /I "%~dp0Include" "%~dp0Src\Main.cpp" /Fd:"SSTL.pdb" /Fe:"SSTL.exe" /link /nologo /debug Kernel32.lib
     if !errorlevel! neq 0 goto error
 ) else (
     echo [SSTL] Compiling and linking [release]...
